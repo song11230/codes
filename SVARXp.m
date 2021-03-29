@@ -1,4 +1,18 @@
 function [A,Ax,ep,e,irf] = SVARXp(z,ext,p,h)
+
+% this code computes a varx model with 2 lags of external variables 
+% Before you run this program, you need to first run a reduced-form var for 
+% external varibales to get rid of the serial correlations in ext.
+% z: endogenous variables
+% ext: external (exogenous) variables
+% p: order of svar
+% h: number of horizons to compute IRFs
+% A: coefficient corresponding to z
+% Ax: coefficient corresponding to ext
+% ep: residuals
+% e: structral shocks
+% irf: impulse responses with h horizons
+
 r=size(z,2);
 
 y = z(p+1:end,:); 
